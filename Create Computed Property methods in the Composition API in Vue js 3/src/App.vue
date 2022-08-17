@@ -2,19 +2,16 @@
 
 <div>
   <h1>{{fullName}}</h1>
-  <h1>{{age}}</h1>
-  <button @click="updateAge">Update Age</button>
   <div>
     
-    <input type="text" placeholder="First Name" @input="changeFirstName" v-model="firstName"/>&nbsp;
+    <input type="text" placeholder="First Name" @input="changeFirstName"/>&nbsp;
     
-    <input type="text" placeholder="Last Name" @input="changeLastName" v-model="lastName"/>&nbsp;
+    <input type="text" placeholder="Last Name" @input="changeLastName"/>
   </div>
-  <!-- <h3>UserDetails</h3>
+  <h3>UserDetails</h3>
   <div>Name: {{userDetails.name}}</div>
   <div>Age: {{userDetails.age}} </div>
-  <button @click.prevent= 'changeName'>Change Name</button> -->
- 
+  <button @click.prevent= 'changeName'>Change Name</button>
 </div>
 
   <nav>
@@ -22,19 +19,13 @@
     
   </nav>
   <router-view/>
-   <UserData :user-details="userDetails"/>
 </template>
 <script>
-import {ref, reactive, computed,watch} from 'vue';
-import UserData from "./components/UserData.vue"
+import {ref, reactive, computed} from 'vue';
 export default {
-  components: {
-    UserData
-  },
  name:"App",
  setup() {
 let name = ref('Leela Web Dev');
-let age = ref(30);
 let firstName = ref('');
 let lastName = ref('');
 
@@ -44,15 +35,14 @@ let userDetails = reactive({
 });
 const fullName = computed(() => {
   return firstName.value + ' ' + lastName.value
-});
-watch([age,fullName], (newValue, oldValue) => {
-console.log(newValue)
-console.log(oldValue)
 })
-
-function updateAge () {
-  age.value = 100;
+function changeFirstName(event) {
+firstName.value = event.target.value;
 }
+function changeLastName(event) {
+  lastName.value= event.target.value;
+}
+
 function changeName() {
   userDetails.name = 'Modified Leela'
 }
@@ -62,11 +52,9 @@ return {
   
  userDetails,
 changeName,
-firstName,
-lastName,
+changeFirstName,
+changeLastName,
 fullName,
-age,
-updateAge,
 }
  },
 

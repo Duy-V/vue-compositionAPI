@@ -10,11 +10,10 @@
     
     <input type="text" placeholder="Last Name" @input="changeLastName" v-model="lastName"/>&nbsp;
   </div>
-  <!-- <h3>UserDetails</h3>
+  <h3>UserDetails</h3>
   <div>Name: {{userDetails.name}}</div>
   <div>Age: {{userDetails.age}} </div>
-  <button @click.prevent= 'changeName'>Change Name</button> -->
- 
+  <button @click.prevent= 'changeName'>Change Name</button>
 </div>
 
   <nav>
@@ -22,15 +21,10 @@
     
   </nav>
   <router-view/>
-   <UserData :user-details="userDetails"/>
 </template>
 <script>
 import {ref, reactive, computed,watch} from 'vue';
-import UserData from "./components/UserData.vue"
 export default {
-  components: {
-    UserData
-  },
  name:"App",
  setup() {
 let name = ref('Leela Web Dev');
