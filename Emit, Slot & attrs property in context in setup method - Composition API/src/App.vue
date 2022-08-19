@@ -2,8 +2,6 @@
 
 <div>
   <h1>{{fullName}}</h1>
-  <div v-if="showLifeCycle"><LifeCycle /></div>
-  <div><button @click.prevent="showLifeCycle = !showLifeCycle">Toggle life cycle</button></div>
   <h1>{{age}}</h1>
   <button @click="updateAge">Update Age</button>
   <div>
@@ -35,17 +33,13 @@
 <script>
 import {ref, reactive, computed,watch} from 'vue';
 import UserData from "./components/UserData.vue"
-import LifeCycle from "./components/LifeCycle.vue"
 export default {
   components: {
-    UserData,
-    LifeCycle
+    UserData
   },
  name:"App",
  setup() {
-  
 let name = ref('Leela Web Dev');
-let showLifeCycle = ref(true)
 let age = ref(30);
 let firstName = ref('');
 let lastName = ref('');
@@ -73,7 +67,7 @@ function firstNameChange(event) {
 }
 return {
   userName: name,
-  showLifeCycle,
+  
  userDetails,
 changeName,
 firstName,
