@@ -2,9 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import ContactView from "../views/ContactView.vue";
-import PostView from "../views/PostView.vue";
-import ArticleView from "../views/ArticleView.vue";
-import CounterView from "../views/CounterView.vue";
+
 const routes = [
   {
     path: "/",
@@ -20,22 +18,6 @@ const routes = [
     path: "/contact",
     name: "contact",
     component: ContactView,
-  },
-  {
-    path: "/post/:id",
-    name: "post",
-    component: PostView,
-  },
-  {
-    path: "/article/:id",
-    name: "article",
-    component: ArticleView,
-    props: true,
-  },
-  {
-    path: "/counter",
-    name: "counter",
-    component: CounterView,
   },
   // {
   //   path: '/about',

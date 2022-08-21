@@ -4,7 +4,6 @@ import AboutView from "../views/AboutView.vue";
 import ContactView from "../views/ContactView.vue";
 import PostView from "../views/PostView.vue";
 import ArticleView from "../views/ArticleView.vue";
-import CounterView from "../views/CounterView.vue";
 const routes = [
   {
     path: "/",
@@ -31,11 +30,6 @@ const routes = [
     name: "article",
     component: ArticleView,
     props: true,
-  },
-  {
-    path: "/counter",
-    name: "counter",
-    component: CounterView,
   },
   // {
   //   path: '/about',

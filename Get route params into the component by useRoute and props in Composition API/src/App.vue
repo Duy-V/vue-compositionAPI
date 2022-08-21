@@ -6,7 +6,6 @@
       <router-link to="/contact">Contact</router-link> |
       <router-link to="/post">Post</router-link> |
       <router-link to="/article">Article</router-link>
-      <router-link to="/counter">Counter</router-link>
     </nav>
     <hr />
     <router-view />
